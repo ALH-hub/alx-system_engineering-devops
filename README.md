@@ -1,1 +1,1 @@
-basics of the shell
+Shell basics. ALX course
