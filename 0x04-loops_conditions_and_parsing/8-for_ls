@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#cut command
-
-files=$(ls)
-
-for file in $files; do
-	echo "$file" | cut -d - -f 2-
-done
