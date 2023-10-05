@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-#display a list of my processes
-
-proc=$(ps -axuf)
-echo "$proc"
