@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#show listening sockets and the owner fo a socket
+
+netstat -l --program
