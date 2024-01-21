@@ -1,7 +1,19 @@
 #make changes to ssh configuration file
 
-file { '~/.ssh/config':
-    ensure  => file,
-    mode    => '0600',
-    content => "Host *\n  IdentityFile ~/.ssh/school\n  PasswordAuthentication no\n",
+file_line { 'host servers':
+    ensure  => 'present',
+    path    => '/etc/ssh/ssh_config',
+    line    => 'Host *',
+}
+
+file_line { 'no PasswordAuthentication':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
+}
+
+file_line { 'IdentityFile':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
 }
