@@ -1,0 +1,4 @@
+#!/bin/usr/env bash
+
+#Generate ssh key pair with given parameter
+ssh-keygen -b 4096 -f "school" -N "betty"
