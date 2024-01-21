@@ -1,0 +1,3 @@
+Host *   # Apply settings to all hosts
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
