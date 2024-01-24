@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #install nginx and configure it
 #nginx replies with a Hellow World string on a curl request
 
