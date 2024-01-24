@@ -3,18 +3,13 @@
 #install nginx and configure it
 #nginx replies with a Hellow World string on a curl request
 
-apt-get update
-apt-get install -y nginx
+sudo apt update
+sudo apt install nginx -y
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello World" > /etc/nginx/html/index.html
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.htm;
-}
-" > /etc/nginx/sites-available/default
+echo "Hello World!" > /var/www/html/index.html
 
-service nginx restart
+sudo sed -i 's/listen\ \[::\]:80\ default_server;/listen\ 80\ default_server;/' /etc/nginx/sites-available/default
+
+sudo nginx -t
+sudo nginx -s stop
+sudo nginx
