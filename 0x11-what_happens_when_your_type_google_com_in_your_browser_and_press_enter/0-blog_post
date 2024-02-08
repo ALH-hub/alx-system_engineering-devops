@@ -1,0 +1,18 @@
+what happens when you type https://www.google.com in your browser
+
+
+When you type https://www.google.com in your browser, the following sequence of events occurs:
+
+1. A request is sent to the DNS server to look up the corresponding IP address for the domain name.
+
+2. With the IP address obtained, the TCP/IP protocols establish a connection with the Google servers to transfer the packets.
+
+3. Once the connection is established, the Firewall ensures that only authorized packets are allowed to be transferred.
+
+4. The HTTPS/SSL encrypts the information to be transferred via the connection, ensuring a secure transfer and keeping intruders away.
+
+5. After the packets are transferred, the load balancer at the server's end ensures an appropriate distribution of traffic to the servers based on the implemented distribution algorithm.
+
+6. Once the traffic is distributed, the web server takes over and handles the HTTP request by communicating with an application server. The application server executes the necessary logic, interacts with the database to retrieve the required information, and prepares the HTTP response to be sent.
+
+7. Finally, as mentioned before, the application server fetches the required information from the database, and the HTTP response is sent back through the channels to your browser in the form of HTML, CSS, and JavaScript.
