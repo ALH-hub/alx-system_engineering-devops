@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-#configure my firewall
-
-sudo apt-get install ufw -y
+#configure ufw firewall
+#
+apt-get install ufw
 sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
-sudo ufw disable
-sudo ufw enable
-sudo ufw default deny incoming
-sudo ufw default deny outgoing
-sudo ufw allow in 22/tcp
-sudo ufw allow in 443/tcp
-sudo ufw allow in 80/tcp
+ufw disable
+ufw enable
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 22/tcp
+ufw allow 443/tcp
+ufw allow 80/tcp
