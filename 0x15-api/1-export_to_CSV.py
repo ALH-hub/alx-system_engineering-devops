@@ -14,7 +14,6 @@ if __name__ == "__main__":
     username = user.get("username")
 
     with open("{}.csv".format(userID), 'w', newline="") as file:
-        line = csv.writer(file, quoting=csv.QUOTE_ALL)
-        [line.writerow(
-            [userId, username, todo.get("completed"), todo.get("title")]
-            for todo in todos)]
+        for todo in todos:
+            file.write("\"{}\", \"{}\", \"{}\", \"{}\"\n".format(
+                userID, username, todo.get("completed"), todo.get("title")))
