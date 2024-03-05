@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """advanced apis"""
-
 import requests
 
 
@@ -19,11 +18,8 @@ def number_of_subscribers(subreddit):
     except requests.exceptions.RequestException:
         return 0
 
-    if response.status_code == 200:
-        try:
-            data = response.json()
-            return data.get("data", {}).get("subscribers", 0)
-        except (KeyError, ValueError):
-            return 0
-    else:
+    if response.status_code == 404:
         return 0
+
+    data = response.json().get("data")
+    return data.get("subscribers", 0)
