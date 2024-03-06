@@ -33,6 +33,4 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     if after is not None:
         return recurse(subreddit, hot_list, after, count)
 
-    print(hot_list)
-
     return hot_list
